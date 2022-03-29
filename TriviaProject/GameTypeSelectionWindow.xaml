@@ -1,0 +1,193 @@
+﻿<Window x:Class="TriviaProject.GameTypeSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TriviaProject"  x:Name="GameTypeSelectionWindowS"
+        mc:Ignorable="d"   WindowStyle="None" 
+      WindowState="Maximized"  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+    ScrollViewer.CanContentScroll="False"  Loaded="Page_Loaded"
+        Title="GameTypeSelectionWindow"  
+        KeyDown="Window_KeyDown">
+    <!--<Window.Background>
+        <ImageBrush ImageSource="images/screens/typeGameScreen.jpg"  >
+        </ImageBrush>
+    </Window.Background>-->
+    <Window.Resources>
+
+
+
+
+    </Window.Resources>
+    <DockPanel>
+        <Frame  x:Name="_mainFrame"  NavigationUIVisibility="Hidden" />
+
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="images/screens/typeGameScreen.jpg"  >
+                </ImageBrush>
+            </Grid.Background>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="21*" />
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="11*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*" />
+                <RowDefinition Height="340*" />
+                <RowDefinition Height="75*" />
+                <RowDefinition Height="22*" />
+
+
+
+
+
+            </Grid.RowDefinitions>
+
+            <Image x:Name="normal" Source="images/buttons/continueButton1.png" Visibility="Hidden"></Image>
+            <Image x:Name="change" Source="images/buttons/continueButton2.png" Visibility="Hidden"></Image>
+
+            <!--//b1-->
+            <Button x:Name="KidsModeImage" Grid.Column="1" Grid.Row="2" Grid.RowSpan="1" MouseEnter="enterM" MouseLeave="leaveM" HorizontalAlignment="Center"  Click="AdultsModeImage_MouseDown_Click"   BorderBrush="Transparent"   MouseDown="KidsModeImage_MouseDown" Cursor="Hand" Margin="52,0" Width="266"  >
+                <!--<Button.Background>
+                    <ImageBrush x:Name="imgButton" ></ImageBrush>
+                </Button.Background>-->
+                <Button.Style>
+
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="False">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="/images/buttons/continueButton1.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="/images/buttons/continueButton2.png"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="Transparent"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+            </Button>
+
+           
+
+
+
+            <Button  x:Name="closePage"  MouseEnter="enterX" MouseLeave="leaveX"  Content="" VerticalAlignment="Bottom" Width="80" Height="80"  MaxHeight="80" MaxWidth="80" FontSize="24" Click="closePageClick" Grid.Column="3" Grid.Row="0" Grid.RowSpan="1" HorizontalAlignment="Left" >
+                <Button.Background>
+                    <ImageBrush x:Name="XButton" ImageSource="images/buttons/xButton1.png" Stretch="Fill" />
+                </Button.Background>
+                <Button.Style>
+
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="False">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="images/buttons/xButton1.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="images/buttons/xButton2.png"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="Transparent"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+
+
+            <Image x:Name="normalX" Source="images/buttons/xButton1.png" Visibility="Hidden"></Image>
+            <Image x:Name="changeX" Source="images/buttons/xButton2.png" Visibility="Hidden"></Image>
+
+
+            <!--//b2-->
+
+
+
+
+
+            <!--<Button x:Name="AdultsModeImage"  Visibility="Hidden" IsEnabled="False"  MaxHeight="300" MaxWidth="400"  Click="KidsModeImage_MouseDown_Click"   BorderBrush="Transparent"   Cursor="Hand" Margin="95,102,9.8,128.2">
+                <Button.Style>
+
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="False">
+
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="/images/כפתור משפחתי.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="/images/כפתור משפחתי2.png"/>
+                                    </Setter.Value>
+                                </Setter>
+
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="Transparent"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>-->
+
+        </Grid>
+    </DockPanel>
+</Window>

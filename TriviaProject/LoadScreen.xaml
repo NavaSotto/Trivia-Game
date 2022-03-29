@@ -1,0 +1,56 @@
+﻿<Window x:Class="TriviaProject.LoadScreen"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TriviaProject" WindowStyle="None" WindowState="Maximized"
+      mc:Ignorable="d "  
+     
+    
+    x:Name="ExitScreenS"
+  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+   ScrollViewer.CanContentScroll="False"  
+
+       
+      Title="AskScreen">
+    <!--<Window.Background>
+        <ImageBrush ImageSource="images/screens/exitScreen.jpg"  >
+        </ImageBrush>
+    </Window.Background>-->
+
+    <DockPanel>
+        <Frame  x:Name="_mainFrame" NavigationUIVisibility="Hidden" />
+        <Grid  >
+            <Grid.Background>
+                <ImageBrush ImageSource="images/screens/loadScreen.jpg"  >
+                </ImageBrush>
+            </Grid.Background>
+            <Label x:Name="label" Content="!!!בהצלחה" HorizontalAlignment="Left" FontWeight="ExtraBold" FontSize="70" Margin="207,191,0,0" VerticalAlignment="Top">
+                <Label.Foreground>
+                    <LinearGradientBrush  StartPoint="0,0" EndPoint="1,1"   >
+                        <GradientStop Color="Red" Offset="0.5"     />
+                        <GradientStop Color="Orange" Offset="0.4"    />
+                        <GradientStop Color="Yellow" Offset="0.3"    />
+
+                    </LinearGradientBrush>
+
+                </Label.Foreground>
+            </Label>
+            <!--<Image Source="images_screen/מסכים ריקים 2.jpg"  Margin="0,25,0,45"></Image>-->
+            <!--//הוספת צליל-->
+            <!--<MediaElement x:Name="continuationScreenSound" MediaFailed="MediaFailedFunc" Visibility="Hidden"  LoadedBehavior="Manual" Source="c_sound.wav"/>-->
+
+
+            
+            <!--<Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid >
+                        <Ellipse Fill="White"/>
+                        <ContentPresenter  Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>-->
+        </Grid>
+    </DockPanel>
+</Window>
