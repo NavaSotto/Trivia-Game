@@ -1,5 +1,6 @@
 
 # Trivia game
+A tool for creating custom trivia quizzes. A desktop version of the familiar ‘Kahoot’ game.
 
 I developed a trivia game for the whole family with the goal of conveying the closures during the Corona period in a more pleasant and fun way
 The questions are sent by the user in an Excel format that can be downloaded from the landing page
